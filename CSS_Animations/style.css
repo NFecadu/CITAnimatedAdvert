@@ -1,0 +1,45 @@
+/* reset and background */
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #f8f8f8;
+  font-family: Arial, sans-serif;
+}
+
+/* sliding logo */
+.logoSlide {
+  position: absolute;
+  top: 20px;
+  left: -200px;
+  width: 200px;
+  height: 200px;
+  background-image: url('cit_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: slideLogo 5s linear infinite;
+}
+
+@keyframes slideLogo {
+  from { left: -200px; }
+  to   { left: calc(100% + 200px); }
+}
+
+/* moving headline with colour shifts */
+.headline {
+  position: absolute;
+  bottom: 20%;
+  left: -100%;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  animation: moveText 7s ease-in-out infinite;
+}
+
+@keyframes moveText {
+  0%   { left: -100%; color: #A41034; }
+  25%  { left: 25%;  color: #FFD200; }
+  50%  { left: 50%;  color: #A41034; }
+  75%  { left: 75%;  color: #FFD200; }
+  100% { left: -100%; color: #A41034; }
+}
