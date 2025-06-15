@@ -21,54 +21,40 @@ h1 {
     font-size: 2rem;
 }
 
-/* Debugging safeguards */
-.debug {
-    border: 1px dashed red !important;
-    background-color: rgba(255,0,0,0.1) !important;
-}
-
-/* Animated CIT logo - UPDATED PATH HANDLING */
+/* Animated CIT logo */
 .animated-logo {
     position: absolute;
     width: 150px;
     height: 150px;
-    /* Multiple fallback options */
-    background-image: 
-        url('./Indiana_Hoosiers_logo.svg.png'), /* Primary path */
-        url('Indiana_Hoosiers_logo.svg.png'),   /* Fallback path */
-        url('https://raw.githubusercontent.com/[YOUR-USERNAME]/[REPO-NAME]/main/Indiana_Hoosiers_logo.svg.png'); /* Absolute fallback */
+    background-image: url('./Indiana_Hoosiers_logo.svg.png');
     background-size: contain;
     background-repeat: no-repeat;
     animation: slideAndPulse 8s infinite ease-in-out;
     left: 10%;
     top: 150px;
-    /* Debug visibility */
-    background-color: rgba(200,200,200,0.3); /* Shows if image fails */
-    border: 1px solid #ccc; /* Container visibility */
+    /* Visual backup */
+    background-color: rgba(200,200,200,0.3);
+    border: 1px solid #ccc;
 }
 
-/* Moving degree path - UPDATED PATH HANDLING */
+/* Moving degree path */
 .moving-degree {
     position: absolute;
     width: 200px;
     height: 100px;
-    /* Multiple fallback options */
-    background-image: 
-        url('./18695_67213f47a0ff9_4344.jpg'),
-        url('18695_67213f47a0ff9_4344.jpg'),
-        url('https://raw.githubusercontent.com/[YOUR-USERNAME]/[REPO-NAME]/main/18695_67213f47a0ff9_4344.jpg');
+    background-image: url('./18695_67213f47a0ff9_4344.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     animation: moveDegree 12s infinite linear;
     top: 350px;
     left: 0;
     opacity: 0.9;
-    /* Debug visibility */
+    /* Visual backup */
     background-color: rgba(200,200,200,0.3);
     border: 1px solid #ccc;
 }
 
-/* Keyframe animations (unchanged) */
+/* Keyframe animations */
 @keyframes slideAndPulse {
     0% { left: 10%; transform: scale(1); }
     25% { left: 30%; transform: scale(1.1); }
@@ -100,7 +86,7 @@ h1 {
     transform: translateX(-50%);
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 100; /* Ensure visibility */
+    z-index: 100;
 }
 
 @keyframes bounce {
@@ -123,8 +109,6 @@ h1 {
     max-width: 600px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border-left: 5px solid #990000;
-    position: relative;
-    z-index: 10;
 }
 
 .info-box h2 {
@@ -139,10 +123,4 @@ h1 {
 .info-box li {
     margin-bottom: 10px;
     line-height: 1.5;
-}
-
-/* Debug mode - add class="debug" to any element */
-.debug {
-    outline: 2px dashed red;
-    background-color: rgba(255,0,0,0.1) !important;
 }
