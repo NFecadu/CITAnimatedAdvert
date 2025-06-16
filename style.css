@@ -7,65 +7,45 @@ body {
     overflow-x: hidden;
 }
 
-header {
-    background-color: #990000;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* ===== ANIMATED LOGO (FORCE DOWNSIZED) ===== */
+/* ===== ANIMATED LOGO (150x150) ===== */
 .animated-logo {
     position: absolute;
-    /* Force display size */
-    width: 150px !important;
-    height: 150px !important;
-    /* Optimize rendering */
-    object-fit: contain;
-    image-rendering: crisp-edges;
-    /* Image */
+    width: 150px;  /* Matches logo.png dimensions */
+    height: 150px;
     background-image: url('logo.png');
     background-size: contain;
     background-repeat: no-repeat;
-    /* Animation */
     animation: slideAndPulse 8s infinite ease-in-out;
     left: 10%;
     top: 150px;
-    /* Debug (remove after verification) */
-    border: 2px solid red;
-    background-color: rgba(255,0,0,0.1);
+    /* Debug visual */
+    outline: 2px dashed red;
 }
 
+/* ===== MOVING CAMPUS (100x100) ===== */
+.moving-campus {
+    position: absolute;
+    width: 100px;  /* Matches campus.png dimensions */
+    height: 100px;
+    background-image: url('campus.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: moveCampus 12s infinite linear;
+    top: 350px;  /* Adjusted for size difference */
+    left: 0;
+    /* Debug visual */
+    outline: 2px dashed blue;
+}
+
+/* ===== KEYFRAMES ===== */
 @keyframes slideAndPulse {
     0% { left: 10%; transform: scale(1); }
     50% { left: 50%; transform: scale(1.1); }
     100% { left: 10%; transform: scale(1); }
 }
 
-/* ===== MOVING CAMPUS (FORCE DOWNSIZED) ===== */
-.moving-degree {
-    position: absolute;
-    /* Force display size */
-    width: 200px !important;
-    height: 100px !important;
-    /* Optimize rendering */
-    object-fit: cover;
-    image-rendering: crisp-edges;
-    /* Image */
-    background-image: url('campus.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    /* Animation */
-    animation: moveDegree 12s infinite linear;
-    top: 350px;
-    left: 0;
-    /* Debug (remove after verification) */
-    border: 2px solid blue;
-    background-color: rgba(0,0,255,0.1);
-}
-
-@keyframes moveDegree {
-    0% { left: -200px; top: 350px; }
+@keyframes moveCampus {
+    0% { left: -100px; top: 350px; }
     25% { left: 25%; top: 300px; }
     50% { left: 50%; top: 350px; }
     75% { left: 75%; top: 300px; }
@@ -79,49 +59,21 @@ header {
     background-color: #006298;
     color: white;
     border-radius: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    animation: bounce 2s infinite alternate, colorChange 4s infinite;
-    top: 500px;
+    animation: bounce 2s infinite alternate;
+    top: 500px;  /* Adjusted position */
     left: 50%;
     transform: translateX(-50%);
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 100;
 }
 
 @keyframes bounce {
-    from { transform: translateX(-50%) translateY(0); }
     to { transform: translateX(-50%) translateY(-20px); }
-}
-
-@keyframes colorChange {
-    0% { background-color: #006298; }
-    50% { background-color: #990000; }
-    100% { background-color: #006298; }
 }
 
 /* ===== INFO BOX ===== */
 .info-box {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 550px auto 50px;
+    background: white;
     max-width: 600px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 600px auto 50px;  /* Extra space for larger logo */
+    padding: 20px;
     border-left: 5px solid #990000;
-}
-
-.info-box h2 {
-    color: #006298;
-    margin-top: 0;
-}
-
-.info-box ul {
-    padding-left: 20px;
-}
-
-.info-box li {
-    margin-bottom: 10px;
-    line-height: 1.5;
 }
